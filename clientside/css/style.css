@@ -30,20 +30,20 @@ h1:after {
   top: -0.618rem;
 }
 
-ul#myscrums {
+ul#myscrums-list {
   list-style: none;
 }
 
-ul#myscrums li {
+ul#myscrums-list li {
   margin-bottom: 0.382rem;
 }
 
-ul#myscrums li em {
+ul#myscrums-list li em {
   margin-left: 0.382rem;
   opacity: 0.5;
 }
 
-ul#myscrums li button.delete {
+ul#myscrums-list li button.delete {
   margin-left: 0.618rem;
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 100px;
@@ -51,12 +51,12 @@ ul#myscrums li button.delete {
   color: rgba(0,0,0,0.18);
   cursor: pointer;
 }
-ul#myscrums li button.delete:hover {
+ul#myscrums-list li button.delete:hover {
   border-color: red;
   color: grey;
 }
 
-span.status {
+span.new {
   font-size: 0.6rem;
   font-weight: bold;
   letter-spacing: 2px;

@@ -10,11 +10,11 @@
 </head>
 <body>
 	<h1>MyScrums!</h1>
-	<section ng-congroller='myscrumsController as mycrums'>
+	<section ng-controller='MyscrumController as myscrums'>
 
-		<ul id='myscrums'>
+		<ul id='myscrums-list'>
 			<li ng-repeat="myscrum in myscrums.all" data-id="{{myscrum._id}}">
-			<strong>{{myscrum.title}}</strong><em>{{myscrum.description}}</em>
+			<strong>{{myscrum.title}}---</strong><em>{{myscrum.description}} | </em>
 			<span class='progress{{myscrum.progress | lowercase}}'>{{myscrum.progress | uppercase}}</span>
 			<button class='delete' ng-click='myscrum.deleteMyscrum(myscrum)'>X</button>
 			</li>
@@ -42,7 +42,8 @@
 				</div>
 
 						<div>
-							<input type="submit" value="Add New Scrum Idea"></input>
+							<input type="submit" value="Add New Idea"></input>
+
 						</div>
 					</form>
 				</select>

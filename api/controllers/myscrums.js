@@ -1,65 +1,65 @@
 var Myscrum = require('../models/Myscrum');
 
 //GET
-function getAll(req, res) {
+function getAll(request, response) {
 	Myscrum.find(function(error, myscrums){
-		if(error) res.json({message: 'Woops! Idea not found'});
+		if(error) response.json({message: 'Woops! Idea not found'});
 
-		res.json({myscrums: myscrums});
+		response.json({myscrums: myscrums});
 	}).select('-__v');
 }
 //POST
-function createMyscrum(req, res){
+function createMyscrum(request, response){
 	console.log('in POST');
-	console.log('body:',req.body);
+	console.log('body:',request.body);
 
-	var myscrum = new Myscrum(req.body);
+	var myscrum = new Myscrum(request.body);
 
 	myscrum.save(function(error){
-		if(error) res.json({message: 'Woops, not able to create idea:' + error});
+		if(error) response.json({message: 'Woops, not able to create idea:' + error});
 
-		res.json({myscrum: myscrum});
+		response.json({myscrum: myscrum});
 	});
 }
 
 //GET
-function getMyscrum(req, res) {
+function getMyscrum(request, response) {
 	//set variable to url req to specific scrum idea
-	var id = req.params.id;
+	var id = request.params.id;
 
 	Myscrum.findById({_id: id}, function(error, myscrum){
-		if(error) res.json({message: 'Woops! could not find idea' + error});
+		if(error) response.json({message: 'Woops! could not find idea' + error});
 		
-		res.json({myscrum: myscrum});
+		response.json({myscrum: myscrum});
 	}).select('-__v');
 }
 
-function updateMyscrum(req, res) {
-	var id = req.params.id;
+function updateMyscrum(request, response) {
+	var id = request.params.id;
 
 	Myscrum.findById({_id: id}, function(error, myscrum){
-		if(error) res.json({message: 'Woops! could not find idea' + error});
+		if(error) response.json({message: 'Woops! could not find idea' + error});
 		
-		if(req.body.title) myscrum.title = req.body.title;
-		if(req.body.descritpion) myscrum.descritpion = req.body.descritpion;
-		if(req.body.progress) myscrum.progress = req.body.progress;
-		if(req.body.points) myscrum.points = req.body.points;
+		if(request.body.title) myscrum.title = request.body.title;
+		if(request.body.descritpion) myscrum.descritpion = request.body.descritpion;
+		if(request.body.progress) myscrum.progress = request.body.progress;
+		// if(request.body.points) myscrum.points = request.body.points;
 
 		myscrum.save(function(error){
-			if(error) res.json({message: 'Woops! idea was not updated,' + error});
+			if(error) response.json({message: 'Woops! idea was not updated,' + error});
 
-			res.json({message: 'Idea updated successfully!', myscrum: myscrum});
+			response.json({message: 'Idea updated successfully!', myscrum: myscrum});
 		});
 	}).select('-__v');
 }
 
-function removeMyscrum(req, res){
-	var id = req.params.id;
+function removeMyscrum(request, response){
+	var id = request.params.id;
 
 	Myscrum.remove({_id: id}, function(error){
-		if(error) res.json({message: 'Woops! idea was not deleted' + error });
+		if(error) response.json({message: 'Woops! idea was not deleted' + error });
 
-		res.json({message: 'Idea was deleted successfully!'});
+		response.json({message: 'Idea was deleted successfully!'});
 
 	}).select('-__v');
 }

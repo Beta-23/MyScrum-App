@@ -16,12 +16,12 @@ function MyscrumController($http){
 	function getMyscrums(){
 		$http
 		.get('http://localhost:3000/myscrums')
-		.then(function(res){
-			self.all = res.data.myscrums;
+		.then(function(response){
+			self.all = response.data.myscrums;
 		});
 	}
 	function addMyscrum(){
-		console.log("ciaoooo");
+
 		$http
 			.post('http://localhost:3000/myscrums', self.newMyscrum)
 			.then(function(response){
@@ -32,7 +32,7 @@ function MyscrumController($http){
 	function deleteMyscrum(myscrum){
 		$http
 			.delete("http://localhost:3000/myscrums" + myscrum._id)
-			.then(function(res){
+			.then(function(response){
 				var index = self.all.indexOf(myscrum);
 				self.all.splice(index, 1);
 		});
