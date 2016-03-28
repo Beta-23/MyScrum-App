@@ -1,7 +1,7 @@
 # MyScrum-App
 This one page web app helps web developers store their creative ideas, edit them and search past postings.
 
-Link to Wireframes--> [On Github]()
+Link to Wireframes--> [On Github](https://github.com/Beta-23/MyScrum-App/tree/master/wireframe)
 
 User Stories-->
 
