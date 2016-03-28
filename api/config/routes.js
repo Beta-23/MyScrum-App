@@ -24,7 +24,7 @@ router.route('/myscrums/:id')
 	.patch(myscrumsController.updateMyscrum)
 
 	//DELETE specific scrum idea from database
-	.delete(myscrumsController.removeMyscrum);
+	.delete(myscrumsController.deleteMyscrum);
 
 module.exports = router;
 

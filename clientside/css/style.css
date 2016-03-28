@@ -1,9 +1,62 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,600,600italic,300italic);
 
+a, a:focus {
+  color: #ccc;
+}
+a:hover {
+  color: #aaa;
+}
+h1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 4.8rem;
+  margin: 4.8rem auto 0;
+  letter-spacing: -2px;
+  color: white;
+
+}
+h3 {
+  color: white;
+
+}
+
+h1:after {
+  content: "™";
+  font-size: 1.4rem;
+  vertical-align: super;
+  position: relative;
+  top: -0.618rem;
+  color: white;
+}
+
+/*.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+}*/
+
 html {
-  border-left: 0.382rem solid grey;
-  border-right: 0.382rem solid grey;
+  border-left: 0.382rem solid black;
+  border-right: 0.382rem solid black;
   min-height: 100%;
+  background-color: purple;
 }
 
 body {
@@ -13,22 +66,9 @@ body {
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.5;
+  background-color: grey;
 }
 
-h1 {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 4.8rem;
-  margin: 4.8rem auto 0;
-  letter-spacing: -2px;
-}
-
-h1:after {
-  content: "™";
-  font-size: 1.4rem;
-  vertical-align: super;
-  position: relative;
-  top: -0.618rem;
-}
 
 ul#myscrums-list {
   list-style: none;
@@ -41,6 +81,7 @@ ul#myscrums-list li {
 ul#myscrums-list li em {
   margin-left: 0.382rem;
   opacity: 0.5;
+
 }
 
 ul#myscrums-list li button.delete {

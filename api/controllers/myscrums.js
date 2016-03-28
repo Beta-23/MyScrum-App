@@ -10,7 +10,7 @@ function getAll(request, response) {
 }
 //POST
 function createMyscrum(request, response){
-	console.log('in POST');
+	
 	console.log('body:',request.body);
 
 	var myscrum = new Myscrum(request.body);
@@ -53,10 +53,11 @@ function updateMyscrum(request, response) {
 	}).select('-__v');
 }
 
-function removeMyscrum(request, response){
+function deleteMyscrum(request, response){
+	console.log('got rquest to delete');
 	var id = request.params.id;
 
-	Myscrum.remove({_id: id}, function(error){
+	Myscrum.delete({_id: id}, function(error){
 		if(error) response.json({message: 'Woops! idea was not deleted' + error });
 
 		response.json({message: 'Idea was deleted successfully!'});
@@ -69,5 +70,5 @@ module.exports = {
 	createMyscrum: createMyscrum,
 	getMyscrum: getMyscrum,
 	updateMyscrum: updateMyscrum,
-	removeMyscrum: removeMyscrum
+	deleteMyscrum: deleteMyscrum
 };
