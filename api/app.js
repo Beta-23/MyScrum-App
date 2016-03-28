@@ -7,7 +7,7 @@ var app = express();
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/Myscrum-App');
+mongoose.connect('mongodb://localhost/Myscrum');
 
 var routes = require('./config/routes');
 

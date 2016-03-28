@@ -3,7 +3,7 @@ var express = require('express'),
 	//parses information from POST
 	bodyParser = require('body-parser'),
 	//used to manipulate POST
-	methodOverride = require('methodOverride');
+	methodOverride = require('method-override');
 
 var myscrumsController = require('../controllers/myscrums');
 

@@ -4,8 +4,8 @@ var MyscrumSchema = mongoose.Schema({
 	title: String,
 	description: String,
 	progress: String,
-	points: Number
+	// points: Number
 
 });
 
-module.exports = mongoose.model('Myscrum',MyscrumSchema);
+module.exports = mongoose.model('Myscrum', MyscrumSchema);

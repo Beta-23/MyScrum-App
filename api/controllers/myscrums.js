@@ -64,7 +64,7 @@ function removeMyscrum(req, res){
 	}).select('-__v');
 }
 
-moules.exports = {
+module.exports = {
 	getAll: getAll,
 	createMyscrum: createMyscrum,
 	getMyscrum: getMyscrum,

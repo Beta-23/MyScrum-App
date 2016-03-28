@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='MyScrum'>
+<html ng-app='MyScrums'>
 <head>
 	<meta charset="UTF-8">
 	<title>MyScrum</title>
@@ -16,11 +16,11 @@
 			<li ng-repeat="myscrum in myscrums.all" data-id="{{myscrum._id}}">
 			<strong>{{myscrum.title}}</strong><em>{{myscrum.description}}</em>
 			<span class='progress{{myscrum.progress | lowercase}}'>{{myscrum.progress | uppercase}}</span>
-			<button class='delete' ng-click='myscrums.deleteMyscrum(myscrum)'>X</button>
+			<button class='delete' ng-click='myscrum.deleteMyscrum(myscrum)'>X</button>
 			</li>
 		</ul>
 
-			<form ng-submit="myscrums.aadMyscrum()" id="newMyscrum">
+			<form ng-submit="myscrums.addMyscrum()" id="newMyscrum">
 				<div>
 					<label for="newMyscrum-title">Title:</label>
 					<input type="text" id="newMyscrum-title" ng-model="myscrums.newMyscrum.title" placeholder="Type Idea title">

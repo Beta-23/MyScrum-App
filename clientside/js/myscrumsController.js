@@ -1,7 +1,7 @@
 angular.module('MyScrums')
-.controller('MyscrumsController', MyscrumsController);
+.controller('MyscrumController', MyscrumController);
 
-MyscrumsController.$inject = ['$http'];
+MyscrumController.$inject = ['$http'];
 
 function MyscrumController($http){
 	var self = this;
@@ -21,9 +21,10 @@ function MyscrumController($http){
 		});
 	}
 	function addMyscrum(){
+		console.log("ciaoooo");
 		$http
 			.post('http://localhost:3000/myscrums', self.newMyscrum)
-			.then(function(res){
+			.then(function(response){
 			getMyscrums();
 		});
 		self.newMyscrum = {};
